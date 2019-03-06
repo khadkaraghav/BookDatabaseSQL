@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/">Show All Books</a><br/>
+
+
+SKU: <span th:text="${book.sku}"></span><br/>
+Title : <span th:text="${book.title}"></span><br/>
+Author : <span th:text="${book.author}"></span><br/>
+Description : <p th:text="${book.description}"></p><br/>
+Price : <span th:text="${book.price}"></span><br/>
+Parental Advisory : <span th:text="${book.isAdult}"></span><br/>
+
+
+
+<a th:href="@{/delete/{id}(id=${book.id})}">Delete This Course</a>
+
+
+</body>
+</html>

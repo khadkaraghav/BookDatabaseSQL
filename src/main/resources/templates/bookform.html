@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+
+<form action="#"
+      method="post"
+      th:action="@{/process}"
+      th:object="${book}">
+
+
+    <input th:field="*{id}" type="hidden"/>
+
+
+    SKU <input th:field="*{sku}" type="text"/>
+    <span th:errors="*{sku}"
+          th:if="${#fields.hasErrors('sku')}"></span>
+
+    TITLE : <input th:field="*{title}" type="text"/>
+    <span th:errors="*{title}"
+          th:if="${#fields.hasErrors('title')}"></span>
+
+    AUTHOR : <input th:field="*{author}" type="text"/>
+    <span th:errors="*{author}"
+          th:if="${#fields.hasErrors('author')}"></span>
+
+    DESCRIPTION : <input th:field="*{description}" type="text"/>
+    <span th:errors="*{description}"
+          th:if="${#fields.hasErrors('description')}"></span>
+
+    PRICE :<input th:field="*{price}" type="text"/>
+    <span th:errors="*{price}"
+          th:if="${#fields.hasErrors('price')}"></span>
+
+    PARENTAL ADVISORY : <input name="select" th:field="*{isAdult}" type="radio" value="yes"/>Yes
+
+    <input name="select" th:field="*{isAdult}" type="radio" value="no"/>No
+    <span th:errors="*{isAdult}"
+          th:if="${#fields.hasErrors('isAdult')}"></span>
+    <br/>
+    <input type="submit" value="Submit"/>
+
+</form>
+
+
+</body>
+</html>
